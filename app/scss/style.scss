@@ -18,6 +18,13 @@
     align-items: center;
     padding: 28px 0;
     /* padding: 30px 0; */
+  }   
+  &__phone-number:hover, &__menu-link:hover{
+    @extend %link-hover-focus;
+    text-decoration-thickness: 1px;
+  }
+  &__phone-number:focus, &__menu-link:focus{
+    outline: none;
   }  
 }
 
@@ -27,7 +34,11 @@
   /* backdrop-filter: blur(54px); */
   color: #1B1F2B;
   overflow: hidden;
-
+  z-index: 1;
+  
+  & path{
+    fill: #1B1F2B ;
+  }
   &::before {
     content: "";
     background: inherit; 
@@ -49,9 +60,6 @@
       margin-right: 0;
   } 
   }  
-  &-link:hover, &-link:focus {
-    text-decoration: underline;
-  } 
 }
 /*_______________header end_______________*/
 
@@ -119,54 +127,75 @@
 }
  .direction__menu-link{
   &:hover{
-    text-decoration: underline;
+    @extend %link-hover-focus;
+    text-decoration-thickness: 2px;
   }
-  &:active{
+  &:focus{
+    @extend %link-hover-focus;
     color: Orange; 
-  }
+    text-decoration-thickness: 2px;
+  }  
  }
 .direction__item{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px; 
+  gap: 30px;
 
-  &-inner{
-   display:flex; 
-   flex-direction: column;
-   justify-content:space-between;
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center;
-   min-height: 531px;
-   border-radius: 50px;
-   transition: all 300ms;
+ &-inner{
+    border-radius: 50px;
+    overflow: hidden; 
+    position: relative;
   }
-  &-info{
+ &-info{
     max-width: 270px;
     padding: 50px;
   }
-  &-background1{
-    background-image: $direction-gradient, url(../images/card-tour-photo-1.jpg)
+  &-size{
+    display:flex; 
+    flex-direction: column;
+    justify-content:space-between;
+    min-height: 531px;     
   }
-  &-background2{
-    background-image: $direction-gradient, url(../images/card-tour-photo-2.jpg)
+  &-background1::after {
+    content: "";
+    background-image: $direction-gradient, url(../images/card-tour-photo-1.jpg);
+    @extend %direction_background;
   }
-  &-background3{
-    background-image: $direction-gradient, url(../images/card-tour-photo-3.jpg)
-  }
-  &-background4{
-    background-image: $direction-gradient, url(../images/card-tour-photo-4.jpg)
-  }
-  &-background5{
-    background-image: $direction-gradient, url(../images/card-tour-photo-5.jpg)
-  }
-  &-background6{
-    background-image: $direction-gradient, url(../images/card-tour-photo-6.jpg)
-  }
-  &-inner:hover{ 
-    transform: scale(1.2); 
-  }
-  &-title{
+ 
+  &-background2::after {
+    content: "";
+    background-image: $direction-gradient, url(../images/card-tour-photo-2.jpg);
+    @extend %direction_background; 
+   } 
+ 
+  &-background3::after {
+    content: "";
+    background-image: $direction-gradient, url(../images/card-tour-photo-3.jpg);
+    @extend %direction_background;
+   }   
+  
+   &-background4::after {
+     content: "";
+     background-image: $direction-gradient, url(../images/card-tour-photo-4.jpg);
+     @extend %direction_background;
+    }   
+  
+   &-background5::after {
+     content: "";
+     background-image: $direction-gradient, url(../images/card-tour-photo-5.jpg);
+     @extend %direction_background;
+   }   
+
+   &-background6::after {
+     content: "";
+     background-image: $direction-gradient, url(../images/card-tour-photo-6.jpg);
+     @extend %direction_background; 
+   }   
+   &-background1:hover::after, &-background2:hover::after, &-background3:hover::after, &-background4:hover::after, &-background5:hover::after, &-background6:hover::after {
+     content: "";
+     transform: scale(1.2);     
+   }           
+   &-title{
     font-weight: 500;
     font-size: 35px;
     line-height: 120%;
@@ -203,6 +232,9 @@
   flex-direction: column;
   color: #1B1F2B;
 }
+.booking__element-date{
+  @extend %body_font;
+}
 .booking__element{
   min-width: 500px;
   min-height: 68px;
@@ -230,12 +262,31 @@
   &-option{
     color: #1B1F2B;
   }
+  &-tel{
+    color: #A6A6A6;
+     color: rgba(0, 0, 0, 0.2);
+    //appearance: none;
+    // overflow: hidden;  
+    // background: url(../images/ic-dropdown.svg) no-repeat 96% 50%; 
+    // background-color:#F9F7F4;
+    padding: 20px 15px;
+  }
+  // &-tel:active, &-tel:hover{
+  //   color: #1B1F2B;;
+    // color: rgba(0, 0, 0, 0.2);
+    //appearance: none;
+    // overflow: hidden;  
+    // background: url(../images/ic-dropdown.svg) no-repeat 96% 50%; 
+    // background-color:#F9F7F4;
+  //   padding: 20px 15px;
+  // }
   &-date{
     text-transform: uppercase;
     letter-spacing: 1px;
   }
 }
 .booking__area{
+  @extend %body_font;
   width: 100%;
   min-height: 152px;
   background: #F9F7F4;
@@ -346,7 +397,6 @@
  }
 .booking__btn{
   display: flex;
-  flex-wrap: wrap;
 }
 .booking__btn-search{
   background-color: #286562;
@@ -392,8 +442,9 @@
   margin-bottom: 30px;
 }
 .reviews__box-content{
-  column-count: 2;
-  column-gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
 }
 .reviews__tour{
   padding: 40px;
@@ -426,6 +477,8 @@
 .reviews__text{
   font-size: 23px;
   font-weight: 700;
+}
+.reviews__text-part1{
   margin-bottom: 25px;
 }
 /* ______________reviews end_______________*/
@@ -448,11 +501,11 @@
   }
   &__img_4{
     grid-column: span 4;
-    @extend %img-style;
+    @extend %gallery-img;
   }
   &__img_5{
     grid-column: span 5;
-    @extend %img-style;
+    @extend %gallery-img;
   }
 }
 /* ______________gallery end_______________*/
@@ -468,35 +521,46 @@
   display:grid;
   gap: 50px;
   &-inner{
+    border-radius: 50px;
+    overflow: hidden; 
+    position: relative;    
+  }
+  &-size{
     display:flex; 
     flex-direction: column;
     justify-content:space-between;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 567px;
-    transition: all 300ms;
-    @extend %img-style;    
+    min-height: 567px; 
+    background-image: $story-gradient;    
   }
-  &-inner:hover{
-    transform: scale(1.2);
+  &-background1::after {
+    background-image: $story-gradient, url(../images/story-photo-1.jpg); 
+    @extend %story-background; 
+    // transform: scale(-1,1);    
+    transform: matrix(-1, 0, 0, 1, 0, 0);    
   }
-  &-background1, &-background2, &-background3{
-	  position: relative;
-	  overflow: hidden; 
-	  background-image: $story-gradient; 
-  } 
-  &-background1::before {
+  &-background2::after {
+    background-image: $story-gradient, url(../images/story-photo-2.jpg);
     @extend %story-background;
-	  background-image: url(../images/story-photo-1.jpg); 
   }
-  &-background2::before {
-	  @extend %story-background;
-	  transform: none;
-	  background-image: url(../images/story-photo-2.jpg); 
+  &-background3::after {
+    background-image: $story-gradient, url(../images/story-photo-3.jpg);
+    @extend %story-background;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
   }
-  &-background3::before {
-	  @extend %story-background;
-	  background-image: url(../images/story-photo-3.jpg); 
+  &-background1:hover::after{
+    content: ""; 
+    transform: scale( 1.2) matrix(-1, 0, 0, 1, 0, 0); 
+    background-image: url(../images/story-photo-1.jpg);
+  }
+   &-background2:hover::after {
+    content: ""; 
+    transform: scale( 1.2); 
+    background-image: url(../images/story-photo-2.jpg);
+  }
+  &-background3:hover::after{
+    content: ""; 
+    transform: scale( 1.2) matrix(-1, 0, 0, 1, 0, 0); 
+    background-image: url(../images/story-photo-3.jpg);
   }
   &-info{
     padding: 60px;
@@ -511,7 +575,7 @@
     padding-bottom: 20px;
   }
 }
-.story__list-item {
+.story__item-list {
   list-style: disc;
   list-style-position: inside;
 }
@@ -533,7 +597,15 @@
       margin-right: 0;
     }
   }
+  &-link:hover{
+    @extend %link-hover-focus;
+    text-decoration-thickness: 1px;
+  }
+  &-link:focus{
+    outline: none;
+  }  
 }
+
 /*______________story end_______________*/
 
 /*______________mail start_______________*/
@@ -606,7 +678,8 @@
     align-items: center;
   }
   &-text:hover{
-    text-decoration: underline;
+    @extend %link-hover-focus;
+    text-decoration-thickness: 1px;
   }
 }
 .footer__img{

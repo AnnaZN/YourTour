@@ -39,7 +39,7 @@ function doFormat(x, pattern, mask) {
   }
   if (formatted=="+7(_ _ _)_ _ _-_ _-_ _"){
     phone.style.color = '#A6A6A6';
-    phone.style.color = 'rgba(0, 0, 0, 0.2)';
+    // phone.style.color = 'rgba(0, 0, 0, 0.2)';
   }
   // return formatted.replace(/^(\d{3})(\d{3})(\d{2})(\d{2})$/, '+7 ($1) $2-$3-$4');
   return formatted;

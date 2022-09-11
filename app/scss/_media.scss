@@ -414,9 +414,17 @@
     &-background1::after, &-background2::after, &-background3::after{
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
-    &-background1:hover::after, &-background2:hover::after, &-background3:hover::after{ 
+    &-background1:hover::after{ 
+      transform: matrix(-1, 0, 0, 1, 0, 0); 
+      background-image: $story-gradient, url(../images/story-photo-1.jpg);
+    }
+    &-background2:hover::after{ 
       transform: none; 
-      background-image: none;
+      background-image: $story-gradient, url(../images/story-photo-2.jpg);
+    }
+    &-background3:hover::after{ 
+      transform: matrix(-1, 0, 0, 1, 0, 0); 
+      background-image: $story-gradient, url(../images/story-photo-3.jpg);
     }
     &-background1:hover  .btn-detailed, &-background2:hover  .btn-detailed, &-background3:hover  .btn-detailed{
       background-color: inherit;

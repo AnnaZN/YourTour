@@ -20,7 +20,7 @@
     /* padding: 30px 0; */
   }   
   &__phone-number:hover, &__menu-link:hover{
-    @extend %link-hover-focus;
+    @extend %link--hover--focus;
     text-decoration-thickness: 1px;
   }
   &__phone-number:focus, &__menu-link:focus{
@@ -127,11 +127,11 @@
 }
  .direction__menu-link{
   &:hover{
-    @extend %link-hover-focus;
+    @extend %link--hover--focus;
     text-decoration-thickness: 2px;
   }
   &:focus{
-    @extend %link-hover-focus;
+    @extend %link--hover--focus;
     color: Orange; 
     text-decoration-thickness: 2px;
   }  
@@ -194,7 +194,10 @@
    &-background1:hover::after, &-background2:hover::after, &-background3:hover::after, &-background4:hover::after, &-background5:hover::after, &-background6:hover::after {
      content: "";
      transform: scale(1.2);     
-   }           
+   }
+   &-background1:hover  .btn-detailed, &-background2:hover  .btn-detailed, &-background3:hover  .btn-detailed, &-background4:hover  .btn-detailed, &-background5:hover  .btn-detailed, &-background6:hover  .btn-detailed{
+    @extend %btn-detailed--hover;  
+  }            
    &-title{
     font-weight: 500;
     font-size: 35px;
@@ -252,7 +255,7 @@
   }
   &-select{
     color: #A6A6A6;
-    color: rgba(0, 0, 0, 0.2);
+    //color: rgba(0, 0, 0, 0.2);
     appearance: none;
     overflow: hidden;  
     background: url(../images/ic-dropdown.svg) no-repeat 96% 50%; 
@@ -264,22 +267,8 @@
   }
   &-tel{
     color: #A6A6A6;
-     color: rgba(0, 0, 0, 0.2);
-    //appearance: none;
-    // overflow: hidden;  
-    // background: url(../images/ic-dropdown.svg) no-repeat 96% 50%; 
-    // background-color:#F9F7F4;
     padding: 20px 15px;
   }
-  // &-tel:active, &-tel:hover{
-  //   color: #1B1F2B;;
-    // color: rgba(0, 0, 0, 0.2);
-    //appearance: none;
-    // overflow: hidden;  
-    // background: url(../images/ic-dropdown.svg) no-repeat 96% 50%; 
-    // background-color:#F9F7F4;
-  //   padding: 20px 15px;
-  // }
   &-date{
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -562,6 +551,9 @@
     transform: scale( 1.2) matrix(-1, 0, 0, 1, 0, 0); 
     background-image: url(../images/story-photo-3.jpg);
   }
+  &-background1:hover  .btn-detailed, &-background2:hover  .btn-detailed, &-background3:hover  .btn-detailed{
+    @extend %btn-detailed--hover;  
+  } 
   &-info{
     padding: 60px;
     max-width: 674px; /* 554+60+60 */
@@ -598,7 +590,7 @@
     }
   }
   &-link:hover{
-    @extend %link-hover-focus;
+    @extend %link--hover--focus;
     text-decoration-thickness: 1px;
   }
   &-link:focus{
@@ -678,7 +670,7 @@
     align-items: center;
   }
   &-text:hover{
-    @extend %link-hover-focus;
+    @extend %link--hover--focus;
     text-decoration-thickness: 1px;
   }
 }

@@ -66,9 +66,7 @@ html{
     outline: none;
   } 
   &:hover{ 
-    background-color: #286562;
-    cursor: pointer;
-    outline: none;  
+    @extend %btn-detailed--hover; 
   } 
   &:active{ 
     background-color: #EFA501;

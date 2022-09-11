@@ -5,9 +5,14 @@
   font-style: normal;
   line-height: 142%;
 }
+%btn-detailed--hover{
+  background-color: #286562;
+  cursor: pointer;
+  outline: none; 
+}
 $intro-gradient:linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 39.9%), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 
-%link-hover-focus{
+%link--hover--focus{
   text-decoration: underline;
   text-underline-offset: 0.3em;  
   outline: none;

@@ -201,6 +201,13 @@
     &-size{
       min-height: 318px;    
     }
+    &-background1:hover::after, &-background2:hover::after, &-background3:hover::after, &-background4:hover::after, &-background5:hover::after, &-background6:hover::after {
+      transform: none;     
+    } 
+    &-background1:hover  .btn-detailed, &-background2:hover  .btn-detailed, &-background3:hover  .btn-detailed, &-background4:hover  .btn-detailed, &-background5:hover  .btn-detailed, &-background6:hover  .btn-detailed{
+      background-color: inherit;
+      cursor: default; 
+    }  
     &-title{
       font-weight: 700;
       font-size: 23px;
@@ -289,6 +296,7 @@
     height: 47px;
     padding: 15px 30px;
     margin-right: 10px;
+    white-space: nowrap;
     &:hover, &:active{ 
       background-color: #286562;
       cursor: default;
@@ -406,6 +414,14 @@
     &-background1::after, &-background2::after, &-background3::after{
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
+    &-background1:hover::after, &-background2:hover::after, &-background3:hover::after{ 
+      transform: none; 
+      background-image: none;
+    }
+    &-background1:hover  .btn-detailed, &-background2:hover  .btn-detailed, &-background3:hover  .btn-detailed{
+      background-color: inherit;
+      cursor: default; 
+    }  
     &-info{
       padding: 30px 25px 31px 30px;
       max-width: 318px; /* 263+30+25 */

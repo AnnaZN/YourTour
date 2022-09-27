@@ -36,13 +36,15 @@
   
   /*_____________booking begin______________*/
   .booking{
-    &__form{
-    padding: 60px;
-    }
-    &__element{
-      min-width: 389px;
-    }
-  }
+      &_box-inner{ 
+        grid-template-columns: repeat(2,minmax(calc(50% - 120px - 20px), 389px));        
+        grid-column-gap: 20px; 
+        padding: 60px;        
+      }
+      &__btn{
+        grid-column: span 2;
+      }
+    }   
   /*_______________booking end_______________*/
   
   /* ______________reviews start_______________*/
@@ -82,6 +84,22 @@
   }
   /* ______________gallery end________________*/
   }
+
+  @media (max-width: 761px) {
+    .intro__title-box{ 
+       padding: max(calc((100vh - 503px - 123px)/2 + 123px), 207px) 0 max(calc((100vh - 503px - 123px)/2), 119px) 0;
+    }
+  }
+  @media (max-width: 581px) {
+    .intro__title-box{ 
+       padding: max(calc((100vh - 503px - 152px)/2 + 152px), 207px) 0 max(calc((100vh - 503px - 152px)/2), 119px) 0;
+    }
+  }
+  @media (max-width: 425px) {
+    .intro__title-box{ 
+       padding: max(calc((100vh - 503px - 180px)/2 + 180px), 207px) 0 max(calc((100vh - 503px - 180px)/2), 119px) 0;
+  } 
+}             
   
   @media (max-width: 360px) {
     /*______________common styles start______________*/
@@ -140,20 +158,24 @@
   /*_______________header end_______________*/
 
   /*_____________intro begin______________*/
-  .intro__title{
-    font-size:  34px; 
-    line-height: 112%;
-    margin-bottom: 40px;
-    letter-spacing: calc(1em / 50);	
-    &-box{ 
-      padding: 140px 0 52px 0 ;
-	    max-width: 318px;	
+  .intro {
+     
+    &__title{
+      font-size:  34px; 
+      line-height: 112%;
+      margin-bottom: 40px;
+      letter-spacing: calc(1em / 50);	
+      &-box{ 
+        padding: max(calc((100vh - 296px - 88px)/2 + 88px), 140px) 0 max(calc((100vh - 296px - 88px)/2), 52px) 0;
+        max-width: 318px;	
+      }
+    }  
+    &__descr{
+      max-width: 310px;
+      margin-bottom: 45px; 
     }
-  }  
-  .intro__descr{
-    max-width: 310px;
-    margin-bottom: 45px; 
   }
+  
   .intro__arrow{
     font-size:  16px; 
     &:hover, &:active{
@@ -182,13 +204,14 @@
       font-size: 16px;
     }
     &-link:hover{
-      color: Orange;
+      color: inherit;
       text-decoration: none;
       cursor: default;
     }
-    &-link:focus{
-      text-decoration: none;
-      cursor: default;
+    &-link:hover:active{
+      color: Orange; 
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
     }  
   }
   .direction__item{
@@ -231,40 +254,38 @@
   .booking__subtitle{
     margin-bottom: 40px;
   }
-  .booking__form{
-    padding: 20px 20px 40px;
-  }
+  .booking{
+    &_box-inner{ 
+      grid-template-columns:repeat(2, minmax(calc(50% - 40px), 278px));        
+      grid-row-gap: 30px; 
+      padding: 20px 20px 40px;        
+    }
+  }  
+  .booking__label{
+    grid-column: span 2;
+ } 
   .booking__element{
-    min-width: 278px;
-    min-height: 43px;
-    padding: 10px;
-    margin-bottom: 31px;
+    height: 43px;
+    padding: 10px; 
     &:hover{
        cursor: default;
     }
     &::placeholder{
       font-size: 16px;
     }
-	  &-select{
-      padding: 12px 5px;
-    } 
     &-date{
-    max-width: 281px;
-    max-height: 43px
+    font-size: 16px;
+    line-height: 142%;
     } 
   }  
   .booking__area{
-    min-height: 132px;
-    margin: 8px 0 28px 0;
-  }
-  .booking__label-age{
-    margin-bottom: 30px;
+    height: 135px;
+    padding: 10px; 
   }
   .booking__radio{
     &-style{
       width: 20px;
       height: 20px;
-      margin-right: 10px;
     }
     &:checked + &-style::before{
       width: 9px;
@@ -274,30 +295,28 @@
   .booking__label-agree{
     font-size:  16px;
     line-height: 144%;
-    margin-bottom: 30px;
-    flex-wrap: nowrap;
+    margin-bottom: 0px;
   }
   .booking__checkbox{
     &-style{
       width: 20px;
       height: 20px;
-      margin-right: 5px;
 	    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
       border-radius: 4px;
     }
     &:checked + &-style::after{
-      width: 13px;
       height: 13px;
       background-size: 13px 13px;  
     }
-	&-text{
-      margin-left: 5px;
-    }
+    &-agreement:hover, &-agreement:active{
+      text-decoration: none;
+      cursor: default;
+      color: inherit;
+    }  
   }
   .booking__btn-search{
-    width: 134px;
+    max-width: 134px;
     height: 47px;
-    padding: 15px 30px;
     margin-right: 10px;
     white-space: nowrap;
     &:hover, &:active{ 
@@ -306,9 +325,8 @@
     } 
   }
   .booking__btn-reset{
-    width: 134px;
+    max-width: 134px;
     height: 47px;
-    padding: 15px 30px;
     &:hover, &:active{ 
       background-color: #E0F0E5;
       cursor: default;
@@ -417,17 +435,17 @@
     &-background1::after, &-background2::after, &-background3::after{
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
-    &-background1:hover::after{ 
-      transform: matrix(-1, 0, 0, 1, 0, 0); 
-      background-image: $story-gradient, url(../images/story-photo-1.jpg);
+    &-background1::after,  &-background1:hover::after {
+      background-image: $story-gradient, url(../images/story-photo-1-mobile.jpg);    
+    }    
+    &-background2::after, &-background2:hover::after {
+      background-image: $story-gradient, url(../images/story-photo-2-mobile.jpg);
     }
-    &-background2:hover::after{ 
-      transform: none; 
-      background-image: $story-gradient, url(../images/story-photo-2.jpg);
+    &-background3::after, &-background3:hover::after {
+      background-image: $story-gradient, url(../images/story-photo-3-mobile.jpg);
     }
-    &-background3:hover::after{ 
-      transform: matrix(-1, 0, 0, 1, 0, 0); 
-      background-image: $story-gradient, url(../images/story-photo-3.jpg);
+    &-background1:hover::after,  &-background2:hover::after,  &-background3:hover::after {
+      transform: none;     
     }
     &-background1:hover  .btn-detailed, &-background2:hover  .btn-detailed, &-background3:hover  .btn-detailed{
       background-color: inherit;

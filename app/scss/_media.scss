@@ -256,7 +256,8 @@
   }
   .booking{
     &_box-inner{ 
-      grid-template-columns:repeat(2, minmax(calc(50% - 40px), 278px));        
+      //grid-template-columns:repeat(2, minmax(calc(50% - 40px), 278px));
+      grid-template-columns:repeat(2, minmax(278px, 278px));        
       grid-row-gap: 30px; 
       padding: 20px 20px 40px;        
     }

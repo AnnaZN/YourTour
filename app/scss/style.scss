@@ -308,7 +308,8 @@ html{
  
   &-inner{
     display: grid;
-    grid-template-columns: repeat(2,minmax(calc( 50% - 33px - 140рх ), 500px));
+    //grid-template-columns: repeat(2,minmax(calc( 50% - 33px - 140рх ), 500px));
+    grid-template-columns: repeat(2,minmax(500px, 500px));
     grid-column-gap: 30px;
     grid-row-gap: 33px;
     padding: 70px;     
@@ -339,7 +340,11 @@ html{
     @extend %body_font;
     text-transform: uppercase;
     letter-spacing: 1px; 
-  }
+  }  
+  // &-date::-webkit-calendar-picker-indicator {
+  //   color: transparent;
+  //   opacity: 0;
+  // }   
   &-select{
     color: #A6A6A6;
     //color: rgba(0, 0, 0, 0.2);
@@ -354,11 +359,6 @@ html{
   &-tel{
     color: #A6A6A6;
   }
-}
-.booking__date-empty{
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #A6A6A6;
 }
 .booking__area{
   @extend %body_font;

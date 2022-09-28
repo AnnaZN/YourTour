@@ -200,7 +200,6 @@ html{
   }
 }
  .direction__menu-link{
-  //&:hover, &:focus{
     &:hover{
     @extend %link--hover--focus;
     text-decoration-thickness: 2px;
@@ -208,13 +207,16 @@ html{
   &:focus{
     outline: none;
   }
-  // &:active, &:focus{
   &:active{
     @extend %link--hover--focus;
-    text-decoration: underline;
     color: Orange; 
     text-decoration-thickness: 2px;
   }  
+  &-active{
+     @extend %link--hover--focus;
+     color: Orange; 
+     text-decoration-thickness: 2px;
+  } 
  }
 .direction__item{
   display: grid;

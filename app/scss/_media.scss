@@ -204,15 +204,8 @@
       font-size: 16px;
     }
     &-link:hover{
-      color: inherit;
-      text-decoration: none;
       cursor: default;
     }
-    &-link:hover:active{
-      color: Orange; 
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-    }  
   }
   .direction__item{
     column-gap: 18px; 

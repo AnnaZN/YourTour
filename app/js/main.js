@@ -76,68 +76,19 @@ document.querySelectorAll('[data-mask]').forEach(function(e) {
 //_________________________mask phone end___________________________________________
 
 //_________________________selected menu item begin___________________________________________
+document.querySelector(".direction__menu-link").classList.add("direction__menu-link-active");
+
+
 document.querySelectorAll(".direction__menu-link").forEach(function(menuLink) {
-
-  //menuLink.classList.add("direction__menu-link-default");
-  //menuLink.classList.remove("direction__menu-link-active");
-
-  // menuLink.onclick = function () {
-  //   menuLink.classList.remove("direction__menu-link-active");
-  //    });
-    
-
   menuLink.addEventListener('click', () => {
     document.querySelectorAll(".direction__menu-link").forEach(function(menuLink) {
       menuLink.classList.remove("direction__menu-link-active"); 
     });
-
-
     
-//     var self = $(this);
-
-//     if (self.hasClass('active')) {
-//         $('.dropdown').removeClass('active');
-//         return false;
-//     }
-
-//     $('.dropdown').removeClass('active');
-
-//     self.toggleClass('active');
-//     hide = false;
-
-  //    if (menuLink.classList.contains("direction__menu-link-active")) {
-	//      menuLink.classList.remove("direction__menu-link-active"); 
-	//  } else {
-	 	menuLink.classList.add("direction__menu-link-active"); 
-	 //}	
-    //menuLink.classList.add("direction__menu-link-default");
-    //menuLink.classList.remove("direction__menu-link-default");
-    //menuLink.classList.add("direction__menu-link-active");
-   });
+ 	  menuLink.classList.add("direction__menu-link-active"); 
+	 });
 });
 //_________________________selected menu item end___________________________________________
 
 
-// remove all .active classes when clicked anywhere
-// hide = true;
-// $('body').on("click", function () {
-//     if (hide) $('.dropdown').removeClass('active');
-//     hide = true;
-// });
-
-// // add and remove .active
-// $('body').on('click', '.dropdown', function () {
-
-//     var self = $(this);
-
-//     if (self.hasClass('active')) {
-//         $('.dropdown').removeClass('active');
-//         return false;
-//     }
-
-//     $('.dropdown').removeClass('active');
-
-//     self.toggleClass('active');
-//     hide = false;
-// });
 

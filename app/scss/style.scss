@@ -159,7 +159,9 @@ html{
 /*_____________intro begin______________*/
 .intro {
   height: 100vh;
-  background: $intro-gradient, url(../images/header-img.jpg) no-repeat center;
+  min-height: 800px; 
+  min-width: 800px;
+  background: $intro-gradient, url(../images/header-img.webp) no-repeat center;
   background-size: cover;
   &__title-box{ 
     display: flex;

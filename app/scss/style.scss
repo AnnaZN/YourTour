@@ -160,7 +160,6 @@ html{
 .intro {
   height: 100vh;
   min-height: 800px; 
-  min-width: 800px;
   background: $intro-gradient, url(../images/header-img.webp) no-repeat center;
   background-size: cover;
   &__title-box{ 
